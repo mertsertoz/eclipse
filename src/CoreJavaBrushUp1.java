@@ -9,7 +9,7 @@ public class CoreJavaBrushUp1 {
          double decimal2 = 2.3233;
          boolean myCard = true;
          
-         System.out.println(myNum);
+        // System.out.println(myNum);
         //Arrays     
          
 	    int[] ary = new int[5];
@@ -19,9 +19,27 @@ public class CoreJavaBrushUp1 {
 	    ary[3] = 9;
 	    ary[4] = 7;
 	    
-	    int[] ary2 = {4,5,6,7,8};
+	    int[] ary2 = {4,5,6,7,8,52,48,66,31};
 	    
-	    System.out.println(ary2[2]);
+	    //for loop
+	    //for(int i = 0; i<ary.length; i++)
+	    //  {
+	    // 	System.out.println(ary[i]);
+	    // }
+	
+	    for(int i =0; i<ary2.length; i++)
+	    {
+	    	System.out.println(ary2[i]);
+	    }
+	    
+	    String[] names = {"mert","alp","kagan","rishabb"};
+	    
+	    for(int i=0; i<names.length; i++)
+	    {
+	    	System.out.println(names[i]);
+	    	
+	    }
+	    
 	    
 	    
 	    
