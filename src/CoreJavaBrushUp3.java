@@ -27,7 +27,7 @@ public class CoreJavaBrushUp3 {
 			
 		}
 		
-		 ArrayList<String> a = new ArrayList<String>();
+		 List<String> a = new ArrayList<String>();
 		 a.add("Sergeant");
 		 a.add("Soap");
 		 a.add("Mactavish");
@@ -44,7 +44,7 @@ public class CoreJavaBrushUp3 {
 			 System.out.println(val);	
 		 }
 		//item is present in ArrayList (true/false)
-		 System.out.println(a.contains("Mactavish"));
+		System.out.println(a.contains("Mactavish"));
         String[] name = {"Soap","Sergeant","Mactavish"};
         List<String> nameArrayList = Arrays.asList(name); //converting array to arraylist
 	    System.out.println(a.contains("Soap"));
