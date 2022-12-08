@@ -13,18 +13,20 @@ public class Strings_Methods {
 		
 		String sa3 = new String("GmbH");
 		String sa4 = new String("GmbH");
-        
+//        
 		String sa5 = "Mert Sertoz Codana";
 		String[] splittedString = sa5.split("Sertoz");  
 		System.out.println(splittedString[0]);
 		System.out.println(splittedString[1]);
 		System.out.println(splittedString[1].trim());  //" sertoz " works fine for trim
 	    //for(int i=0; i<sa5.length(); i++)
-	   for(int i= sa5.length()-1; i>=0; i--)  //for reverse writing
-	    {
-	    	
-	    	System.out.println(sa5.charAt(i));
-	    }
+		
+		sa5.chars().forEach(System.out::println);
+//	   for(int i= sa5.length()-1; i>=0; i--)  //for reverse writing
+//	    {
+//	    	
+//	    	System.out.println(sa5.charAt(i));
+//	    }
 	}
 
 }
