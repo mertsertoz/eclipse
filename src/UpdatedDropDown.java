@@ -11,9 +11,9 @@ public class UpdatedDropDown {
 		WebDriver driver= new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-		System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+		Assert.assertFalse(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
 		driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).click();
-		System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+		Assert.assertTrue(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
 		
 		//count number of checkboxes
 		
