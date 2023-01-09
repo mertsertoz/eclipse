@@ -15,58 +15,78 @@ public class calendar {
 
 	{
 
+		String url ="https://www.path2usa.com/travel-companion";
+
+		WebDriver driver;
+
+		
+
 		System.setProperty("webdriver.chrome.driver", "D:/driver/chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.path2usa.com/travel-companions");
+
+		driver = new ChromeDriver();
+
+		driver.get(url);
+
+		driver.manage().window().maximize();
 
 		// Scroll the Page
-		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		js.executeScript("window.scrollBy(0,800)");
+		JavascriptExecutor js = (JavascriptExecutor)driver;
 
-		Thread.sleep(4000);
+		js.executeScript("window.scrollBy(0,1100)");
 
-		driver.findElement(By.id("form-field-travel_comp_date")).click();
+		// Click on the Date field
 
-		WebElement month = driver.findElement(By.xpath("//div[@class='flatpickr-month']"));
+		Thread.sleep(3000);
 
-		while (!month.getText().contains("April"))
+		WebElement Date = driver.findElement(By.xpath("//*[@id='form-field-travel_comp_date']"));
+
+		// js.executeScript("arguments[0].scrollIntoView(true);", Date);
+
+		Date.click();
+
+		//WebElement month = driver.findElement(By.xpath("//div[@class='flatpickr-month']"));
+
+		while(!driver.findElement(By.xpath("//div[@class='flatpickr-month']")).getText().contains("April"))
 
 		{
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[@class='flatpickr-next-month']")).click();
-			;
+
+		Thread.sleep(2000);
+
+		     driver.findElement(By.xpath("//span[@class='flatpickr-next-month']")).click();
 
 		}
 
-		int count = driver.findElements(By.xpath("//span[@class='flatpickr-day ']")).size();
+		int count= driver.findElements(By.xpath("//span[@class='flatpickr-day ']")).size();
 
-		for (int i = 0; i < count; i++)
+		for(int i=0;i<count;i++)
 
 		{
 
-			String text = driver.findElements(By.xpath("//span[@class='flatpickr-day ']")).get(i).getText();
+		//Thread.sleep(3000);
 
-			if (text.equalsIgnoreCase("26"))
+		     String text=driver.findElements(By.xpath("//span[@class='flatpickr-day ']")).get(i).getText();
 
-			{
+		     if(text.equalsIgnoreCase("26"))
 
-				// driver.findElements(By.cssSelector("td[class*='day']")).get(i).click();
+		     {
 
-				driver.findElements(By.xpath("//span[@class='flatpickr-day ']")).get(i).click();
+		   
 
-				System.out.println(text);
+		driver.findElements(By.xpath("//span[@class='flatpickr-day ']")).get(i).click();
 
-				break;
+		    System.out.println("The select day is:"+text);
 
-			}
+		    break;
+
+		     }
 
 		}
 
 		String date = driver.findElement(By.xpath("//*[@id='form-field-travel_comp_date']")).getAttribute("value");
 
-		System.out.println("The select date is:" + date);
+		System.out.println("The select date is:"+date);
 
-	}
+		}
 
-}
+		}
