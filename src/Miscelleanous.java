@@ -25,7 +25,6 @@ public class Miscelleanous {
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileHandler.copy(src,new File("D:\\Step1.png"));
 		
-		
 	}
 
 }
