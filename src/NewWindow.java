@@ -31,15 +31,15 @@ public class NewWindow {
 		driver.switchTo().window(parentWindowId);
 		WebElement name = driver.findElement(By.cssSelector("[name='name']"));
 		name.sendKeys(courseName);
+		//taking screenshot
 		File file= name.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(file,new File("logo.png"));
 		
 		
-		
-		
-		
-		//driver.quit();
-		
+		//Getting Height & Width
+		System.out.println(name.getRect().getDimension().getHeight());
+		System.out.println(name.getRect().getDimension().getWidth());
+	
 		
 		
 	}
