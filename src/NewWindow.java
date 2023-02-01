@@ -3,13 +3,14 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
-import org.apache.commons.io.FileUtils;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
 
 public class NewWindow {
 
@@ -33,7 +34,7 @@ public class NewWindow {
 		name.sendKeys(courseName);
 		//taking screenshot
 		File file= name.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(file,new File("logo.png"));
+		FileHandler.copy(file,new File("D:\\logo.png"));
 		
 		
 		//Getting Height & Width
